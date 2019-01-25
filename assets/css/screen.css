@@ -1569,8 +1569,9 @@ Usage (In Ghost editor):
 /* ---------------------------------------------------------- */
 
 .post-full-comments {
-    margin: 0 auto;
     max-width: 840px;
+    display: flex;
+    justify-content: center;
 }
 
 
