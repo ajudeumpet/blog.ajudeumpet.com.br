@@ -18,6 +18,8 @@
 <main id="site-main" class="site-main outer">
     <div class="inner">
 
+        {{#get 'authors' limit='all' include='count.posts' order='count.posts desc'}}
+
         <div class="post-feed">
             {{#if authors}}
                 {{#foreach authors}}
@@ -79,7 +81,7 @@
                 {{/foreach}}
             {{/if}}
         </div>
-
+        {{/get}}
     </div>
 </main>
 {{/post}}
