@@ -1,0 +1,12 @@
+version: '3.1'
+services:
+  ghost:
+    image: ghost:latest
+    restart: always
+    ports:
+      - 2368:2368
+    environment: 
+      - NODE_ENV=development
+    volumes:
+      - .:/var/lib/ghost/content/themes/aup-theme-ghost:rw
+      - ./data:/var/lib/ghost/content/data:rw
