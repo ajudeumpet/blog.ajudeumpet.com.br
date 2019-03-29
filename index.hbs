@@ -7,8 +7,10 @@ into the {body} of the default.hbs template --}}
         {{> "site-nav"}}
         <div class="site-header-content">
             <h1 class="site-title">
-                <img class="site-logo" src="/assets/aup.png" alt="{{@blog.title}}" />
-                <span>{{@blog.description}}</span>
+                <figure>
+                    <img class="site-logo" src="/assets/aup.png" alt="{{@blog.title}}" />
+                </figure>
+                <small>{{@blog.description}}</small>
             </h1>
         </div>
     </div>
