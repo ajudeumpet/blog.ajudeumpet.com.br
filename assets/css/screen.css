@@ -2408,3 +2408,22 @@ Usage (In Ghost editor):
     width: 24px;
     height: 24px;
 }
+
+
+/* Special Styling for home page grid (below):
+
+The first post in the list is styled to be bigger than the others and take over
+the full width of the grid to give it more emphasis. Wrapped in a media query to
+make sure this only happens on large viewports / desktop-ish devices.
+
+ */
+
+ @media (max-width: 795px) {
+    .post-full-footer {
+        flex-flow: column;
+    }
+    .post-full-footer-right {
+        margin: 0;
+        margin-top: 20px;
+    }
+}
