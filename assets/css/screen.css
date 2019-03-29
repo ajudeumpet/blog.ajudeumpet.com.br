@@ -145,8 +145,18 @@ body {
     flex-flow: column nowrap;
 }
 
+.site-title > small {
+    font-size: inherit;
+}
+
+.site-title > figure {
+    max-width: 175px;
+    width: 34vw;
+}
+
 .site-logo {
-    /* max-height: 45px; */
+    width: 100%;
+    padding-bottom: 15px;
 }
 
 .site-description {
@@ -2383,9 +2393,14 @@ Usage (In Ghost editor):
     right: 20px;
     cursor: pointer;
     z-index: 1010;
-    padding: 5px;
+    padding: 7px;
     box-shadow: 1px 1px 5px 0;
     border-radius: 50%;
     background-color: var(--primary-dark);
     display: none;
+}
+
+#back-top > svg {
+    width: 24px;
+    height: 24px;
 }
