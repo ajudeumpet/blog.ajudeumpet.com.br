@@ -2393,20 +2393,29 @@ Usage (In Ghost editor):
 
 #back-top {
     position: fixed;
+    width: 38px;
+    height: 38px;
     bottom: 20px;
     right: 20px;
     cursor: pointer;
     z-index: 1010;
-    padding: 7px;
     box-shadow: 1px 1px 5px 0;
     border-radius: 50%;
     background-color: var(--primary-dark);
     display: none;
 }
 
-#back-top > svg {
-    width: 24px;
-    height: 24px;
+.back-to-top {
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.back-to-top > svg {
+    width: 20px;
+    height: 20px;
 }
 
 
