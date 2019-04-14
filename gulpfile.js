@@ -23,7 +23,7 @@ var swallowError = function swallowError(error) {
 };
 
 var nodemonServerInit = function () {
-    livereload.listen(1234);
+    livereload.listen(2368);
 };
 
 gulp.task('build', ['css', 'js'], function (/* cb */) {
