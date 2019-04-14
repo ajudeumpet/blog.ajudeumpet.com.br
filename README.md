@@ -22,7 +22,7 @@ We've documented our default theme pretty heavily so that it should be fairly ea
 
 # Development
 
-This theme styles are compiled using Gulp/PostCSS to polyfill future CSS spec. You'll need [Node](https://nodejs.org/), [Yarn](https://yarnpkg.com/), [Gulp](https://gulpjs.com) and [docker](https://www.docker.com/) installed globally. After that, from the theme's root directory:
+This theme styles are compiled using Gulp/PostCSS to polyfill future CSS spec. You'll need [Node](https://nodejs.org/), [Yarn](https://yarnpkg.com/), [Gulp](https://gulpjs.com), [docker](https://www.docker.com/) and [docker-compose](https://docs.docker.com/compose/install/) installed globally. After that, from the theme's root directory:
 
 ```bash
 $ yarn install
