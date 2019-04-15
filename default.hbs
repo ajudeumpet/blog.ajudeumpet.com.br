@@ -32,8 +32,10 @@
             <div class="site-footer-content inner">
                 <nav class="site-footer-nav">
                     <a href="{{@blog.url}}">Últimos Posts</a>
-                    {{#if @blog.facebook}}<a href="{{facebook_url @blog.facebook}}" target="_blank" rel="noopener">Facebook</a>{{/if}}
-                    {{#if @blog.twitter}}<a href="{{twitter_url @blog.twitter}}" target="_blank" rel="noopener">Twitter</a>{{/if}}
+                    {{#if @blog.facebook}}<a href="{{facebook_url @blog.facebook}}" target="_blank"
+                        rel="noopener">Facebook</a>{{/if}}
+                    {{#if @blog.twitter}}<a href="{{twitter_url @blog.twitter}}" target="_blank"
+                        rel="noopener">Twitter</a>{{/if}}
                     <a href="/ghost" rel="noopener">Acessar painel</a>
                 </nav>
             </div>
@@ -51,6 +53,37 @@
     <div id="back-top">
         <div class="back-to-top">
             {{> "icons/arrow-up"}}
+        </div>
+    </div>
+
+    <div id="drop-back"></div>
+    <div id="drawer" style="transform: translateX(264px)">
+        <div class="drawer__header">
+            <button id="drawer-button"> <span>Fechar</span>
+                {{> "icons/close"}}</button>
+        </div>
+        <div class="drawer__body">
+            {{#if @blog.navigation}}
+            {{navigation}}
+            {{/if}}
+        </div>
+        <div class="drawer__footer">
+            <footer class="site-footer outer">
+                <div class="site-footer-content inner">
+                    <nav class="site-footer-nav">
+                        <a href="{{@blog.url}}">Posts</a>
+                        {{#if @blog.facebook}}<a href="{{facebook_url @blog.facebook}}" target="_blank"
+                            rel="noopener">Facebook</a>{{/if}}
+                        {{#if @blog.twitter}}<a href="{{twitter_url @blog.twitter}}" target="_blank"
+                            rel="noopener">Twitter</a>{{/if}}
+                    </nav>
+                </div>
+                <div class="site-footer-content inner">
+                    <section class="copyright">
+                        <a href="{{@blog.url}}">{{@blog.title}}</a> &copy; {{date format="YYYY"}}
+                    </section>
+                </div>
+            </footer>
         </div>
     </div>
 
@@ -84,8 +117,8 @@
 
 
     {{!-- jQuery + Fitvids, which makes all video embeds responsive --}}
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-        crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous">
         </script>
     <script type="text/javascript" src="{{asset "built/jquery.fitvids.js"}}"></script>
     <script src="{{asset "built/fuzzysort.js"}}"></script>
@@ -103,6 +136,17 @@
     {{!-- Ghost outputs important scripts and data with this tag - it should always be the very last thing before the
     closing body tag --}}
     {{ghost_foot}}
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-138323154-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-138323154-1');
+    </script>
+
 
 </body>
 

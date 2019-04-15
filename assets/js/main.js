@@ -4,6 +4,9 @@ var LIMIT_TO_SHOW_BUTTON_BACK_TOP = 200
 var DURANTIONS = {
     SHOW_BUTTON: 300
 }
+var STATE = {
+    menuMobileIsOpened: false
+}
 
 onInit();
 
@@ -12,7 +15,36 @@ function onInit() {
     $('.search-icon').click(onClickSearch);
     $('.search-popover').click(stopPropagation);
     $('#back-top').click(onClickScrollTop);
+    $('#menu-mobile').click(onClickMenuMobile);
+    $('#drop-back').click(onClickMenuMobile);
+    $('#drawer-button').click(onClickMenuMobile);
     $(window).scroll(onScroll)
+}
+
+function changeDropBack() {
+    if(STATE.menuMobileIsOpened) {
+        $('#drop-back').css({
+            display: 'none'
+        })
+        return
+    }
+
+    $('#drop-back').css({
+        display: 'block'
+    })
+}
+
+function onClickMenuMobile() {
+    console.log('onClickMenuMobile');
+    var drawer = $('#drawer')
+
+    if(STATE.menuMobileIsOpened) {
+        drawer.removeClass('open-drawer')
+    } else {
+        drawer.addClass('open-drawer')
+    }
+    changeDropBack()
+    STATE.menuMobileIsOpened = !STATE.menuMobileIsOpened;
 }
 
 function onScroll() {
