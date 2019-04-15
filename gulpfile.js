@@ -8,6 +8,7 @@ var sourcemaps = require('gulp-sourcemaps');
 var zip = require('gulp-zip');
 var uglify = require('gulp-uglify');
 var filter = require('gulp-filter');
+var browserSync = require('browser-sync').create();
 
 // postcss plugins
 var autoprefixer = require('autoprefixer');
@@ -23,7 +24,7 @@ var swallowError = function swallowError(error) {
 };
 
 var nodemonServerInit = function () {
-    livereload.listen(2368);
+    livereload.listen(1234);
 };
 
 gulp.task('build', ['css', 'js'], function (/* cb */) {
@@ -47,7 +48,7 @@ gulp.task('css', function () {
         .pipe(postcss(processors))
         .pipe(sourcemaps.write('.'))
         .pipe(gulp.dest('assets/built/'))
-        .pipe(livereload());
+        .pipe(browserSync.stream());
 });
 
 gulp.task('js', function () {
@@ -61,7 +62,7 @@ gulp.task('js', function () {
         .pipe(jsFilter.restore)
         .pipe(sourcemaps.write('.'))
         .pipe(gulp.dest('assets/built/'))
-        .pipe(livereload());
+        .pipe(browserSync.stream());
 });
 
 gulp.task('watch', function () {
@@ -83,6 +84,14 @@ gulp.task('zip', ['css', 'js'], function () {
         .pipe(gulp.dest(targetDir));
 });
 
+var ghostDockerUrl = 'http://127.0.0.1:2368/'
+
 gulp.task('default', ['build'], function () {
+
+    browserSync.init({
+        proxy: ghostDockerUrl
+    });
+
+    gulp.watch("**/*.hbs").on('change', browserSync.reload);
     gulp.start('watch');
 });

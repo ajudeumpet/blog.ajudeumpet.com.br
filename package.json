@@ -13,8 +13,7 @@
         "mobile": "assets/screenshot-mobile.jpg"
     },
     "scripts": {
-        "dev": "gulp",
-        "zip": "gulp zip",
+        "dev": "docker-compose up -d && gulp",
         "test": "gscan ."
     },
     "author": {
@@ -31,6 +30,7 @@
     },
     "keywords": [
         "ghost",
+        "aup",
         "theme",
         "ghost-theme"
     ],
@@ -41,6 +41,7 @@
     "bugs": "",
     "contributors": "",
     "devDependencies": {
+        "browser-sync": "^2.26.3",
         "autoprefixer": "6.3.6",
         "cssnano": "3.7.1",
         "gscan": "^2.0.0",
