@@ -22,7 +22,7 @@ function onInit() {
 }
 
 function changeDropBack() {
-    if(STATE.menuMobileIsOpened) {
+    if (STATE.menuMobileIsOpened) {
         $('#drop-back').css({
             display: 'none'
         })
@@ -38,7 +38,7 @@ function onClickMenuMobile() {
     console.log('onClickMenuMobile');
     var drawer = $('#drawer')
 
-    if(STATE.menuMobileIsOpened) {
+    if (STATE.menuMobileIsOpened) {
         drawer.removeClass('open-drawer')
     } else {
         drawer.addClass('open-drawer')
@@ -48,7 +48,7 @@ function onClickMenuMobile() {
 }
 
 function onScroll() {
-    if($(this).scrollTop() > LIMIT_TO_SHOW_BUTTON_BACK_TOP) {
+    if ($(this).scrollTop() > LIMIT_TO_SHOW_BUTTON_BACK_TOP) {
         $('#back-top').fadeIn(DURANTIONS.SHOW_BUTTON);
         return;
     }
@@ -85,7 +85,7 @@ function onSearch() {
 function debounce(fn, m) {
     var key = fn.name;
     if (DEBOUNCE[key]) clearTimeout(DEBOUNCE[key])
-    DEBOUNCE[key] = setTimeout(fn, m || 300)
+    DEBOUNCE[key] = setTimeout(fn, m || 400)
 }
 
 function getGhostPostUrl() {
