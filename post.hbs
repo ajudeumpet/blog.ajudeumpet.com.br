@@ -51,15 +51,6 @@ into the {body} of the default.hbs template --}}
                 </div>
             </section>
 
-            {{!-- Email subscribe form at the bottom of the page --}}
-            {{#if @labs.subscribers}}
-            <section class="subscribe-form">
-                <h3 class="subscribe-form-title">Todas as novidades na sua mão</h3>
-                <p>Atualizações, novos posts e muito mais.</p>
-                {{subscribe_form placeholder="seu@email.com"}}
-            </section>
-            {{/if}}
-
             <footer class="post-full-footer">
 
                 {{!-- There are two options for how we display the byline/author-info.
@@ -78,6 +69,15 @@ into the {body} of the default.hbs template --}}
             <section class="post-full-comments">
                 <div class="fb-comments" data-width="840" data-href="{{url absolute="true"}}" data-numposts="10"></div>
             </section>
+
+            {{!-- Email subscribe form at the bottom of the page --}}
+            {{#if @labs.subscribers}}
+                <section class="subscribe-form">
+                    <h3 class="subscribe-form-title">Todas as novidades na sua mão</h3>
+                    <p>Atualizações, novos posts e muito mais.</p>
+                    {{subscribe_form placeholder="seu@email.com"}}
+                </section>
+            {{/if}}
 
         </article>
 
