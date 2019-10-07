@@ -91,9 +91,10 @@ function debounce(fn, m) {
 
 function getGhostPostUrl() {
     return ghost.url.api('posts', {
-        fields: ['title', 'slug', 'tags'],
+        fields: ['title', 'slug'],
+        include: ['tags'],
+        order: 'published_at',
         limit: 'all',
-        order: 'published_at'
     })
 }
 
